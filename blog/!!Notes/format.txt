@@ -1,0 +1,54 @@
+TODO!!!
+<link rel="stylesheet" href="<?= base_url('assets/css/virtual-select.min.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+<script type="text/javascript" src="<?= base_url('assets/js/virtual-select.min.js') ?>"></script>
+
+
+
+
+----------------1)
+<div class="card-header bg-transparent border-bottom">
+        <h3 class="fw-semibold"><i class="ti ti-tag"></i> Tags</h3>
+</div>
+
+
+
+<div class="card-header bg-transparent border-bottom">
+        <div class="d-flex justify-content-between">
+            <h3 class="fw-semibold"> <i class="ti ti-edit"><i class="ti ti-edit"></i> Update Article</h3></h3>
+            <h3>
+                <a href="<?= base_url('articles') ?>">
+                    <i class="ti ti-arrow-back-up-double"></i>
+                </a>
+            </h3>
+        </div>
+ </div>
+
+
+----------------2)
+{ 
+                    "data": "updated_at",
+                    "render": function (data, type, row) {
+                        if (!data) { // Check jika updated_at kosong
+                            return '<div class="text-center">-</div>'; // Tampilkan tanda strip (-) jika updated_at kosong
+                        } else {
+                            return '<div class="text-center">' + formatDate(data) + '</div>'; // Memformat tanggal jika updated_at tidak kosong
+                        }
+                    }
+                },
+
+
+----------------3)
+'<button type="button" class="btn btn-sm btn-danger rounded-circle ms-2" data-bs-toggle="modal" data-bs-target="#deleteArticlesModal" data-id="' + row.id + '"><i class="ti ti-trash fs-3"></i></button></div>'
+
+ $('#deleteTagModal').on('show.bs.modal', function (event) {
+            var button      = $(event.relatedTarget);
+            var id          = button.data('id');
+            var modal       = $(this);
+            var deleteUrl   = '<?= base_url("tags/delete/") ?>' + id;
+            modal.find('#deleteConfirmBtn').attr('href', deleteUrl);
+        });
+
+
+------------4)
+Buat statement untuk updated_at or created_at jika kosong *tdk menggunakan ajax

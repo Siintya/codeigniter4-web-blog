@@ -1,0 +1,53 @@
+.multiselect {
+    width: 200px;
+  }
+  
+  .selectbox select {
+    display: none;
+  }
+  
+  .overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  #checkboxes {
+    display: none;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: scroll;
+  }
+  
+  #checkboxes label {
+    display: block;
+  }
+  
+  #checkboxes label:hover {
+    background-color: #f9f9f9;
+  }
+  
+  #checkboxes label input {
+    vertical-align: middle;
+  }
+  
+  #checkboxes label span {
+    vertical-align: middle;
+  }
+.round-image-30 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.round-image-200 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
